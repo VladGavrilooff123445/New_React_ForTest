@@ -5,11 +5,19 @@ import axios from "axios";
      const [login, setLogin] = useState('');
      const [password, setPassword] = useState('');
      const handler = async () =>{
-         const userName = await axios.post('http://localhost:3000/api/user_name',{login: login,password: password}, { headers: {
+         const userName = await axios.post('http://localhost:3000/api/user_name',
+        {
+                 login: login,
+                 password: password
+             },
+       {
+                  headers: {
                  'Content-Type': 'application/json'
              }
-         });
+       });
+         alert(userName.data.date);
     }
+
 
         return (
             <div>
